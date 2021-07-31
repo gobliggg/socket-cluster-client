@@ -1,8 +1,16 @@
-const express = require('express');
-const serveStatic = require("serve-static")
-const path = require('path');
+const express = require('express')
+const port = process.env.PORT || 3000
+let app = require('express')()
+let http = require('http').Server(app)
 
-const app = express();
-app.use(serveStatic(path.join(__dirname, 'dist')));
-const port = process.env.PORT || 80;
-app.listen(port);
+/*
+ *  Serve /dist/ folder
+ */
+app.use(express.static(__dirname + '/dist'))
+app.get(/.*/, (req, res) => {
+    res.sendFile(__dirname + '/dist/index.html')
+})
+
+http.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+})
