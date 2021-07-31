@@ -31,8 +31,6 @@ import $ from 'jquery'
 export default {
   props: ["socket"],
   created() {
-    this.socket.transmitPublish('message', 'This is a message');
-
     this.axios.get(this.serverUrl + "/api/v1/symbols").then((result) => {
       this.stocks = result.data.data;
     })
