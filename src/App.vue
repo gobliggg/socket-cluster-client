@@ -33,12 +33,9 @@ export default {
       this.socket = socketClusterClient.create({
         hostname: this.socketUrl,
         secure: true,
-        port: 443,
+        port: this.socketPort,
         rejectUnauthorized: false
       });
-
-      this.channel = this.socket.channel('message');
-      this.channel.subscribe();
     },
   },
 };

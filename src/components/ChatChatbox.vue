@@ -31,6 +31,9 @@ import $ from 'jquery'
 export default {
   props: ["socket"],
   created() {
+    this.channel = this.socket.channel('message');
+    this.channel.subscribe();
+
     this.axios.get(this.serverUrl + "/api/v1/symbols").then((result) => {
       this.stocks = result.data.data;
     })
@@ -44,7 +47,6 @@ export default {
   mounted() {
     if (this.channel) {
       (async () => {
-
         for await (let data of this.channel) {
           if (data) {
             $("#stock-" + data.symbol + " .low").html(data.low)
