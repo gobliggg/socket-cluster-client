@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       stocks: [],
-      serverUrl: process.env.VUE_APP_MARKET_API_URL,
+      serverUrl: process.env.VUE_APP_API_URL,
     };
   },
   mounted() {

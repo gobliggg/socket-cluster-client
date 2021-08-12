@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <chat-navbar></chat-navbar>
+    <navbar></navbar>
     <br />
-    <chat-chatbox :socket="socket"></chat-chatbox>
+    <stock :socket="socket"></stock>
   </div>
 </template>
 
 <script>
 import socketClusterClient from "socketcluster-client";
-import ChatNavbar from "./components/ChatNavbar.vue";
-import ChatChatbox from "./components/ChatChatbox.vue";
+import Navbar from "./components/Navbar";
+import Stock from "./components/Stock";
 
 export default {
   name: "App",
   components: {
-    ChatNavbar,
-    ChatChatbox,
+    Navbar,
+    Stock,
   },
   data() {
     return {

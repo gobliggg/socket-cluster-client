@@ -1,4 +1,4 @@
-# chat-app
+# stock-app
 
 ## Project setup
 ```
@@ -9,8 +9,10 @@ npm install
 Create a **.env** file in root folder.
 Now, Copy **.env.default** content into **.env** file.
 ```
-VUE_APP_TITLE=Chat Application               # application title
-VUE_APP_SOCKET_URL=ws://localhost:8080       # socket url
+VUE_APP_TITLE=Hallo
+VUE_APP_SOCKET_URL=gobliggg-socket-cluster.herokuapp.com
+VUE_APP_SOCKET_PORT=443
+VUE_APP_API_URL=https://sachie.gobliggg.xyz/market_api
 ```
 
 ### Compiles and hot-reloads for development
