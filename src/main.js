@@ -14,6 +14,7 @@ import {
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import moment from 'moment'
 
 Vue.config.productionTip = false;
 
@@ -24,6 +25,7 @@ Vue.use(VueAxios, axios)
 Vue.component("b-card", BCard);
 Vue.component("b-input-group", BInputGroup);
 Vue.component("b-button", BButton);
+Vue.prototype.moment = moment
 Vue.use(IconsPlugin);
 
 new Vue({
